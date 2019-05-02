@@ -11,27 +11,40 @@ public class PageController {
 	public ModelAndView index() {
 
 		ModelAndView mv = new ModelAndView("page");
-		mv.addObject("greeting", "Welcome to Spring Web MVC");
+		mv.addObject("title", "Home");
+		mv.addObject("userClickHome", true);
 		return mv;
 
 	}
-	//Demonstration of how to use @RequestParam and @PathVariable
-	/*@RequestMapping(value = "/test")
-	public ModelAndView test(@RequestParam(value = "greeting", required = false) String greeting) {
-		if(greeting == null) {
-			greeting = "hello there";
-		}
+
+	@RequestMapping(value =  "/about" )
+	public ModelAndView about() {
+
 		ModelAndView mv = new ModelAndView("page");
-		mv.addObject("greeting", greeting);
+		mv.addObject("title", "About");
+		mv.addObject("userClickAbout", true);
 		return mv;
+
 	}
-	@RequestMapping(value = "/test/{greeting}")
-	public ModelAndView test(@PathVariable("greeting") String greeting) {
-		if(greeting == null) {
-			greeting = "hello there";
-		}
+	@RequestMapping(value =  "/contact" )
+	public ModelAndView contact() {
+
 		ModelAndView mv = new ModelAndView("page");
-		mv.addObject("greeting", greeting);
+		mv.addObject("title", "Contact");
+		mv.addObject("userClickContact", true);
 		return mv;
-	}*/
+
+	}
+	// Demonstration of how to use @RequestParam and @PathVariable
+	/*
+	 * @RequestMapping(value = "/test") public ModelAndView test(@RequestParam(value
+	 * = "greeting", required = false) String greeting) { if(greeting == null) {
+	 * greeting = "hello there"; } ModelAndView mv = new ModelAndView("page");
+	 * mv.addObject("greeting", greeting); return mv; }
+	 * 
+	 * @RequestMapping(value = "/test/{greeting}") public ModelAndView
+	 * test(@PathVariable("greeting") String greeting) { if(greeting == null) {
+	 * greeting = "hello there"; } ModelAndView mv = new ModelAndView("page");
+	 * mv.addObject("greeting", greeting); return mv; }
+	 */
 }
