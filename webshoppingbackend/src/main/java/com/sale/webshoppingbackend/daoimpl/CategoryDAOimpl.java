@@ -8,7 +8,6 @@ import org.springframework.stereotype.Repository;
 import com.sale.webshoppingbackend.dao.CategoryDAO;
 import com.sale.webshoppingbackend.dto.Category;
 
-
 @Repository("categoryDAO")
 public class CategoryDAOimpl implements CategoryDAO {
 
@@ -46,8 +45,18 @@ public class CategoryDAOimpl implements CategoryDAO {
 
 	@Override
 	public List<Category> list() {
-		// Will return the array list 
+		// Will return the array list
 		return categories;
+	}
+
+	@Override
+	public Category get(int id) {
+		// enhanced for loop
+		for (Category category : categories) {
+			if (category.getId() == id) return category;
+
+		}
+		return null;
 	}
 
 }
