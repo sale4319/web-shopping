@@ -51,7 +51,7 @@ public class CategoryDAOimpl implements CategoryDAO {
 
 	@Override
 	public Category get(int id) {
-		// enhanced for loop
+		// Enhanced for loop
 		for (Category category : categories) {
 			if (category.getId() == id) return category;
 

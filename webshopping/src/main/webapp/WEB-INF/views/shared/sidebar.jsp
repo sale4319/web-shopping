@@ -1,4 +1,4 @@
-<h1 class="my-4">Shop Name</h1>
+<p class="lead">Shop Name</p>
 
 
 <div class="list-group">
