@@ -467,6 +467,11 @@ mark, .mark {
 	max-width: 100%;
 	height: auto
 }
+.logo {
+	position: absolute;
+	margin-top: 15px;
+	margin-left: 10px;
+}
 
 .img-thumbnail {
 	padding: 0.25rem;
@@ -4473,6 +4478,9 @@ input[type="submit"].btn-block, input[type="reset"].btn-block, input[type="butto
 	line-height: inherit;
 	white-space: nowrap
 }
+
+
+
 
 .navbar-brand:hover, .navbar-brand:focus {
 	text-decoration: none

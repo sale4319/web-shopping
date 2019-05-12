@@ -1,9 +1,9 @@
 
 <!-- Navigation -->
 
-<nav class="navbar navbar-expand-lg navbar-light bg-light fixed-top">
+<nav class="navbar navbar-expand-lg fixed-top navbar-light bg-light">
 <div class="container">
-  <a class="navbar-brand" href="${contextRoot}/home">Web Shopping</a>
+  <a href="${contextRoot}/home" class="navbar-brand" >Web Shopping</a>
   <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarColor03" aria-controls="navbarColor03" aria-expanded="false" aria-label="Toggle navigation">
     <span class="navbar-toggler-icon"></span>
   </button>

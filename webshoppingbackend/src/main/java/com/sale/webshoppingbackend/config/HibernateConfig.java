@@ -25,7 +25,6 @@ public class HibernateConfig {
 	private static final String DATABASE_USERNAME = "sa";
 	private static final String DATABASE_PASSWORD = "1";
 
-	
 	// dataSource bean providing connection information
 	@Bean
 	public DataSource getDataSource() {
@@ -51,14 +50,6 @@ public class HibernateConfig {
 		return builder.buildSessionFactory();
 	}
 
-	//transactionManager  manage hibernate transactions
-	@Bean
-	public HibernateTransactionManager getTransactionManager(SessionFactory sessionFactory) {
-		HibernateTransactionManager transactionManager = new HibernateTransactionManager();
-		return transactionManager;
-	}
-	
-	
 	// All hibernate properties will be returned in this method
 	private Properties getHibernateProperties() {
 
@@ -71,5 +62,11 @@ public class HibernateConfig {
 		return properties;
 	}
 
-	
+	// transactionManager manage hibernate transactions
+	@Bean
+	public HibernateTransactionManager getTransactionManager(SessionFactory sessionFactory) {
+		HibernateTransactionManager transactionManager = new HibernateTransactionManager(sessionFactory);
+		return transactionManager;
+	}
+
 }
