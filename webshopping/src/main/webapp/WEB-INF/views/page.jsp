@@ -26,13 +26,23 @@
 
 <script>
 	window.menu = '${title}';
+	
+	window.contextRoot = '${contextRoot}';
 </script>
+
+
 
 <!-- Bootstrap core CSS -->
 <link href="${css}/bootstrap.min.css" rel="stylesheet">
 
 <!-- Bootstrap Readable Theme -->
 <link href="${css}/bootstrap-readable-theme.css" rel="stylesheet">
+
+<!-- Bootstrap dataTables -->
+<link href="${css}/dataTables.bootstrap4.css" rel="stylesheet">
+
+<!-- Fontawesome CSS -->
+<link href="${css}/font-awesome.min.css" rel="stylesheet">
 
 <!-- Custom styles for this template -->
 <link href="${css}/myapp.css" rel="stylesheet">
@@ -74,10 +84,20 @@
 		<!-- Footer -->
 		<%@include file="./shared/footer.jsp"%>
 
-
-		<!-- Bootstrap core JavaScript -->
+		<!-- jQuery -->
 		<script src="${js}/jquery.min.js"></script>
-		<script src="${js}/bootstrap.bundle.min.js"></script>
+		
+		<!-- Bootstrap core JavaScript -->
+		<script src="${js}/bootstrap.min.js"></script>
+		
+		<!-- DataTables Plugin -->
+		<script src="${js}/jquery.dataTables.js"></script>
+		
+		<!-- DataTables Bootstrap -->
+		<script src="${js}/dataTables.bootstrap4.js"></script>
+		
+		<!-- DataTables Bootstrap -->
+		<script src="${js}/bootbox.min.js"></script>
 
 		<!-- Self coded javascrpit -->
 		<script src="${js}/myapp.js"></script>

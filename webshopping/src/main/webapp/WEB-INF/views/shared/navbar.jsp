@@ -2,7 +2,7 @@
 
 <nav class="navbar navbar-expand-lg fixed-top navbar-light bg-light">
 	<div class="container">
-		<a href="${contextRoot}/home" class="navbar-brand"><img src="https://i.imgur.com/Q8sSSii.png" width="205" height="35" class="d-inline-block align-top" alt=""></a>
+		<a href="${contextRoot}/home" class="navbar-brand"><img src="${contextRoot}/resources/images/ws.png" width="205" height="35" class="d-inline-block align-top" alt=""></a>
 		<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarColor03" aria-controls="navbarColor03" aria-expanded="false" aria-label="Toggle navigation">
 			<span class="navbar-toggler-icon"></span>
 		</button>
