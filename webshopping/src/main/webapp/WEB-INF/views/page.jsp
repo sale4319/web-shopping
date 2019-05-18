@@ -17,7 +17,8 @@
 <meta charset="utf-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<meta name="description" content="Online Shopping Website Using Spring MVC and Hibernate">
+<meta name="description"
+	content="Online Shopping Website Using Spring MVC and Hibernate">
 <meta name="author" content="Aleksandar">
 <meta name="_csrf" content="${_csrf.token}">
 <meta name="_csrf_header" content="${_csrf.headerName}">
@@ -26,7 +27,7 @@
 
 <script>
 	window.menu = '${title}';
-	
+
 	window.contextRoot = '${contextRoot}';
 </script>
 
@@ -74,11 +75,17 @@
 				<%@include file="contact.jsp"%>
 			</c:if>
 
-			<!-- Loading only when user clicks listProducts -->
+			<!-- Loading only when user clicks view products -->
 			<c:if
 				test="${userClickAllProducts==true or userClickCategoryProducts==true}">
 				<%@include file="listProducts.jsp"%>
 			</c:if>
+
+			<!-- Loading only when user clicks single product -->
+			<c:if test="${userClickShowProduct==true}">
+				<%@include file="singleProduct.jsp"%>
+			</c:if>
+		
 		</div>
 
 		<!-- Footer -->
@@ -86,16 +93,16 @@
 
 		<!-- jQuery -->
 		<script src="${js}/jquery.min.js"></script>
-		
+
 		<!-- Bootstrap core JavaScript -->
 		<script src="${js}/bootstrap.min.js"></script>
-		
+
 		<!-- DataTables Plugin -->
 		<script src="${js}/jquery.dataTables.js"></script>
-		
+
 		<!-- DataTables Bootstrap -->
 		<script src="${js}/dataTables.bootstrap4.js"></script>
-		
+
 		<!-- DataTables Bootstrap -->
 		<script src="${js}/bootbox.min.js"></script>
 
