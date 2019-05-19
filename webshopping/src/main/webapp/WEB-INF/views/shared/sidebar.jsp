@@ -1,4 +1,4 @@
-<p class="lead"><img src="${contextRoot}/resources/images/shopname.png" width="205" height="60" class="d-inline-block align-top" alt=""></p>
+<p class="lead"><img src="${contextRoot}/resources/images/wsNew.png" width="190" height="85" alt=""></p>
 
 
 <div class="list-group">

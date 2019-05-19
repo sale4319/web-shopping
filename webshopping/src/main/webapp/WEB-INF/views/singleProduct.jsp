@@ -38,20 +38,41 @@
 
 			<h3>${product.name}</h3>
 			<hr />
-			
+
 			<p>${product.description}</p>
 			<hr />
-			
-			<h4>Price: <strong> &euro; ${product.unitPrice}</strong></h4>
-			<hr />
-			
-			<h6>Qty. Available: ${product.quantity}</h6>
 
-			<a href="${contextRoot}/cart/add/${product.id}/product" class="btn btn-success"><span class= "fa fa-shopping-cart"></span> Add to Cart</a>
+			<h4>
+				Price: <strong> &euro; ${product.unitPrice}</strong>
+			</h4>
+			<hr />
+
+			<c:choose>
+				<c:when test="${product.quantity < 1}">
+					<h6>
+						Qty. Available: <span style ="color: red">Out of Stock!</span>
+					</h6>
+				</c:when>
+				<c:otherwise>
+					<h6>Qty. Available: ${product.quantity}</h6>
+				</c:otherwise>
+			</c:choose>
+
+			<c:choose>
+				<c:when test="${product.quantity < 1}">
+						<button type="button" class="btn btn-success" disabled><a href="javascript:void(0)"><strike>
+						<span class="fa fa-shopping-cart"></span> Add to Cart</strike></a></button> 
+				</c:when>
+				<c:otherwise>
+					<a href="${contextRoot}/cart/add/${product.id}/product" class="btn btn-success">
+					<span class="fa fa-shopping-cart"></span> Add to Cart</a> 
+				</c:otherwise>
+			</c:choose>
+				
 			<a href="${contextRoot}/show/all/products" class="btn btn-warning"> Back</a>
 
 		</div>
 
 	</div>
-	
+
 </div>
