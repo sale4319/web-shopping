@@ -37,6 +37,12 @@ body {
 	width:100px;
 	height: 130px;
 }
+
+.adminDataTableImg{
+	width: 50px;
+	height: 50px;
+}
+
 .thumbnail img {
 	width: 100%;
 }
@@ -79,14 +85,9 @@ footer {
 	height: 60px;
 }
 
-.dataTableImg {
-	width: 100px;
-	height: 100px;
-}
-
-.help-block {
-	color: #ff0000
-	
+.adminDataTableImg{
+	width: 50px;
+	height: 50px;
 }
 
 .has-success {
