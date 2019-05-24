@@ -77,7 +77,17 @@
 						<div class="form-group row">
 							<label for="categoryId" class="col-md-4 col-form-label"><strong>Select Category</strong></label>							
 							<div class="col-md-8">							
-								<sf:select class="form-control" path="categoryId" id="categoryId" items="${categories}" itemLabel="name" itemValue="id" />
+								<sf:select class="form-control" path="categoryId" id="categoryId" 
+								items="${categories}" 
+								itemLabel="name" 
+								itemValue="id" 
+								/>
+								<c:if test ="${product.id == 0}">
+								<div class="text-right">
+									<br/>
+									<button type="button" data-toggle="modal" data-target="#myCategoryModal" class="btn btn-warning btn-sm">Add Category</button>
+								</div>
+								</c:if>
 							</div>
 						</div>
 						<div class="form-group">
@@ -139,7 +149,42 @@
 				</table>
 			</div>
 		</div>
-		
-		
-		
+		<!-- Modal -->
+		<div class="modal fade" id="myCategoryModal" tabindex="-1" role="dialog" aria-labelledby="labelTitle" aria-hidden="true">
+		  <div class="modal-dialog" role="document">
+		    <div class="modal-content">
+		      <div class="modal-header">
+		        <h4 class="modal-title" id="labelTitle">Add New Category</h4>
+		        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+		          <span aria-hidden="true">&times;</span>
+		        </button>
+		      </div>
+		      <div class="modal-body">
+				<sf:form modelAttribute="category" action="${contextRoot}/manage/category"
+						method="POST" class="form-horizontal">
+						
+						<div class="form-group row">
+							<label for="category_name" class="control-lable col-md-4">Category Name</label>
+							<div class="col-md-8">
+							<sf:input type="text" path="name" id="category_name" class="form-control"/>
+							</div>												
+						</div>
+						
+						<div class="form-group row">
+							<label for="category_description" class="control-lable col-md-4">Category Description</label>
+							<div class="col-md-8">
+							<sf:textarea cols="" rows="5" path="description" id="category_description" class="form-control"/>
+							</div>												
+						</div>
+						<div class="form-group">							
+							<div class="col-md-8 offset-4">
+								 <input type="submit" value="Add Category" class="btn btn-primary"/>
+							</div>												
+						</div>
+				</sf:form>		        
+		      </div>		     
+		    </div>
+		  </div>
+		</div>
+				
 		</div>
