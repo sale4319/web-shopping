@@ -1,5 +1,7 @@
 package com.sale.webshoppingbackend.daoimpl;
 
+import java.util.List;
+
 import org.hibernate.SessionFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
@@ -63,7 +65,43 @@ public class UserDAOImpl implements UserDAO {
 						.createQuery(selectQuery, User.class)
 							.setParameter("email", email)
 								.getSingleResult();
-			
+
+		} catch (Exception ex) {
+			ex.printStackTrace();
+			return null;
+		}
+
+	}
+
+	@Override
+	public Address getBillingAddress(int userId) {
+		String selectQuery = "FROM Address WHERE user_id = :user_id AND billing = :billing";
+		try {
+
+			return sessionFactory.getCurrentSession()
+						.createQuery(selectQuery, Address.class)
+							.setParameter("user_id", userId)
+								.setParameter("billing", true)
+									.getSingleResult();
+
+		} catch (Exception ex) {
+			ex.printStackTrace();
+			return null;
+		}
+
+	}
+
+	@Override
+	public List<Address> listShippingAddresses(int userId) {
+		String selectQuery = "FROM Address WHERE user_id = :user_id AND shipping = :shipping";
+		try {
+
+			return sessionFactory.getCurrentSession()
+						.createQuery(selectQuery, Address.class)
+							.setParameter("user_id", userId)
+								.setParameter("shipping", true)
+									.getResultList();
+
 		} catch (Exception ex) {
 			ex.printStackTrace();
 			return null;
