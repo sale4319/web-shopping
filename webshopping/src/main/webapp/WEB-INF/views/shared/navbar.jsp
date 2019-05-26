@@ -26,6 +26,13 @@
 				
 			
 			</ul>
+			<ul class="navbar-nav navbar-right">
+				<li id="manageProducts" class="nav-item">
+				<a class="nav-link" href="${contextRoot}/register">Sign Up</a></li>
+				
+				<li id="manageProducts" class="nav-item">
+				<a class="nav-link" href="${contextRoot}/login">Login</a></li>
+			</ul>
 		</div>
 	</div>
 </nav>

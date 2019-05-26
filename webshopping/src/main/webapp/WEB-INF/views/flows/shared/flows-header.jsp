@@ -4,6 +4,7 @@
 <%@taglib prefix='spring' uri="http://www.springframework.org/tags"%>
 
 <spring:url var="css" value="/resources/css" />
+<spring:url var="js" value="/resources/js" />
 <spring:url var="images" value="/resources/images" />
 
 <c:set var="contextRoot" value="${pageContext.request.contextPath}" />
@@ -38,6 +39,9 @@
 <!-- Bootstrap Readable Theme -->
 <link href="${css}/bootstrap-readable-theme.css" rel="stylesheet">
 
+<!-- Bootstrap dataTables -->
+<link href="${css}/dataTables.bootstrap4.css" rel="stylesheet">
+
 <!-- Fontawesome CSS -->
 <link href="${css}/font-awesome.min.css" rel="stylesheet">
 
@@ -48,53 +52,12 @@
 
 <body>
 
-		<div class="wrapper">
+	<div class="wrapper">
 
-	    <nav class="navbar navbar-expand-sm navbar-light bg-light fixed-top ">
-	        <div class="container">
-	           
-	            <div class="navbar-header">
-	                <a href="${contextRoot}/home" class="navbar-brand"><img src="${contextRoot}/resources/images/ws.png" width="205" height="35"></a>
-	            </div>
-			</div>
-		</nav>
-			
-		
+		<!-- Navigation -->
+		<%@include file="../shared/flows-navbar.jsp" %>
+
+
+		<!-- Page Content -->
 		<div class="content">
 		
-			<div class="container">
-			
-				<div class="row">
-				
-					<div class="col-12">
-					
-						
-						<div class="jumbotron">
-						
-							<h1>${errorTitle}</h1>
-							<hr/>
-						
-							<blockquote style="word-wrap:break-word">
-								
-								${errorDescription}
-							
-							</blockquote>						
-						
-						</div>
-						
-											
-					</div>					
-				
-				</div>
-			
-			</div>
-							
-		</div>
-
-		
-		<%@include file="./shared/footer.jsp" %>
-
-	</div>
-</body>
-
-</html>
