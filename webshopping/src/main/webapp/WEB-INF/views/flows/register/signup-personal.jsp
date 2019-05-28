@@ -23,7 +23,7 @@
 							<label class="col-md-4 col-form-label"><strong>First Name: </strong></label>
 							<div class="col-md-8">
 								<sf:input type="text" path="firstName" placeholder="First Name" class="form-control" />
-								
+								<sf:errors path="firstName" cssClass="help-block" element="em"/>
 							</div>
 						</div>
 						
@@ -31,7 +31,7 @@
 							<label  class="col-md-4 col-form-label"><strong>Last Name: </strong></label>
 							<div class="col-md-8">
 								<sf:input type="text" path="lastName" placeholder="Last Name" class="form-control" />
-								
+								<sf:errors path="lastName" cssClass="help-block" element="em"/>
 							</div>
 						</div>
 						
@@ -39,7 +39,7 @@
 							<label class="col-md-4 col-form-label"><strong>Email: </strong></label>
 							<div class="col-md-8">
 								<sf:input type="text" path="email" placeholder="ex@example.com" class="form-control" />
-								
+								<sf:errors path="email" cssClass="help-block" element="em"/>
 							</div>
 						</div>
 						
@@ -47,7 +47,7 @@
 							<label class="col-md-4 col-form-label"><strong>Contact Number: </strong></label>
 							<div class="col-md-8">
 								<sf:input type="text" path="contactNumber" placeholder="XXXXXXXXXX" maxlength="10" class="form-control" />
-								
+								<sf:errors path="contactNumber" cssClass="help-block" element="em"/>
 							</div>
 						</div>
 						
@@ -55,7 +55,15 @@
 							<label  class="col-md-4 col-form-label"><strong>Password: </strong></label>
 							<div class="col-md-8">
 								<sf:input type="password" path="password" placeholder="Password" class="form-control" />
-								
+								<sf:errors path="password" cssClass="help-block" element="em"/>
+							</div>
+						</div>
+						
+						<div class="form-group row">
+							<label  class="col-md-4 col-form-label"><strong>Confirm Password: </strong></label>
+							<div class="col-md-8">
+								<sf:input type="password" path="confirmPassword" placeholder="Re-enter Password" class="form-control" />
+								<sf:errors path="confirmPassword" cssClass="help-block" element="em"/>
 							</div>
 						</div>
 												

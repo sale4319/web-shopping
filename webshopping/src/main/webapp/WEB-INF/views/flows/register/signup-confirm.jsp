@@ -11,8 +11,11 @@
 
 				<div class="card-body">
 					<div class="text-center">
-					Personal details here
-				</div>
+						<h4>${registerModel.user.firstName} ${registerModel.user.lastName}</h4>
+						<h5>Email: ${registerModel.user.email}</h5>
+						<h5>Contact number: ${registerModel.user.contactNumber}</h5>
+						<h5>Role: ${registerModel.user.role}</h5>
+					</div>
 				<div class="card-footer">
 				<a href="${flowExecutionUrl}&_eventId_personal" class="btn btn-primary">Edit</a>
 				</div>
@@ -29,8 +32,11 @@
 
 				<div class="card-body">
 					<div class="text-center">
-					Billing address details here
-				</div>
+						<h4>${registerModel.billing.addressLineOne}</h4>
+						<h4>${registerModel.billing.addressLineTwo}</h4>
+						<h4>${registerModel.billing.city} - ${registerModel.billing.postalCode}</h4>
+						<h4>${registerModel.billing.state} - ${registerModel.billing.country}</h4>
+					</div>
 				<div class="card-footer">
 				<a href="${flowExecutionUrl}&_eventId_billing" class="btn btn-primary">Edit</a>
 				</div>
@@ -44,7 +50,7 @@
 		<div class="col-sm-4 offset-4">
 			<div class="text-center">
 					<br/>
-				<a href="${flowExecutionUrl}&_eventId_success" class="btn btn-primary">Confirm</a>
+				<a href="${flowExecutionUrl}&_eventId_submit" class="btn btn-primary">Confirm</a>
 
 			</div>
 		</div>
