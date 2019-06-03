@@ -160,7 +160,7 @@
 		        </button>
 		      </div>
 		      <div class="modal-body">
-				<sf:form modelAttribute="category" action="${contextRoot}/manage/category"
+				<sf:form id="categoryForm" modelAttribute="category" action="${contextRoot}/manage/category"
 						method="POST" class="form-horizontal">
 						
 						<div class="form-group row">

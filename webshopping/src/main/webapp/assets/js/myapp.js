@@ -24,6 +24,19 @@ $(function() {
 		$('#a_' + menu).addClass('active');
 		break;
 	}
+	// to tackle csrf token
+	var token = $('meta[name="_csrf"]').attr('content');
+	var header = $('meta[name="_csrf_header"]').attr('content');
+	
+	if(token.length > 0 && header.length >0){
+		
+		//set the token header for the ajax request
+		$(document).ajaxSend(function(e, xhr, options){
+			
+			xhr.setRequestHeader(header,token);
+			
+		});
+	}
 
 	// code for jQuery dataTable
 
@@ -239,4 +252,86 @@ $(function() {
 		});
 	}
 	
+	//----------------------------
+	//  Validation code for category
+	
+	var $categoryForm = $('#categoryForm');
+	if($categoryForm.length){
+		$categoryForm.validate({
+			
+			rules : {
+				name : {
+					
+					required : true,
+					minlength : 2
+				},
+				
+				description : {
+					required: true
+					}
+				},
+				
+				messages : {
+					name : {
+						required: 'Please add the category name!',
+						minlength: 'The category name should not be less than 2 characters long.'
+					},
+					description : {
+						required: 'Please add a description for this category!',
+						
+					}
+				},
+			errorElement: 'em',
+			errorPlacement: function(error, element){
+				// add the class of help block
+				error.addClass('help-block');
+				// add the error element after the input element
+				error.insertAfter(element);
+			}
+			
+		});
+		
+	}
+	
+	//--------------------------
+//  Validation code for login
+	
+	var $loginForm = $('#loginForm');
+	if($loginForm.length){
+		$loginForm.validate({
+			
+			rules : {
+				username : {
+					
+					required : true,
+					email : true
+				},
+				
+				password : {
+					required: true
+					}
+				},
+				
+				messages : {
+					username : {
+						required: 'Please enter the username!',
+						email: 'Please enter valid email address.'
+					},
+					password : {
+						required: 'Please enter the password!',
+						
+					}
+				},
+			errorElement: 'em',
+			errorPlacement: function(error, element){
+				// add the class of help block
+				error.addClass('help-block');
+				// add the error element after the input element
+				error.insertAfter(element);
+			}
+			
+		});
+		
+	}
+
 });

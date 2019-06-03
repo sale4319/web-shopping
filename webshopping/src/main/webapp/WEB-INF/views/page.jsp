@@ -17,8 +17,7 @@
 <meta charset="utf-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<meta name="description"
-	content="Online Shopping Website Using Spring MVC and Hibernate">
+<meta name="description" content="Online Shopping Website Using Spring MVC and Hibernate">
 <meta name="author" content="Aleksandar">
 <meta name="_csrf" content="${_csrf.token}">
 <meta name="_csrf_header" content="${_csrf.headerName}">
@@ -98,7 +97,10 @@
 
 		<!-- jQuery -->
 		<script src="${js}/jquery.min.js"></script>
-
+		
+		<!-- jQuery Validate -->
+		<script src="${js}/jquery.validate.js"></script>
+		
 		<!-- Bootstrap core JavaScript -->
 		<script src="${js}/bootstrap.min.js"></script>
 
