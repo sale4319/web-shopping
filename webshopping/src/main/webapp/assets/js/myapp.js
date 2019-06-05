@@ -104,8 +104,13 @@ $(function() {
 								
 							}
 							else{
-								str += '<a href="' + window.contextRoot + '/cart/add/' + data + '/product" class="btn btn-success"><span class = "fa fa-shopping-cart"></span></a>';
+								if(userRole == 'ADMIN'){
+								str += '<a href="' + window.contextRoot + '/manage/' + data + '/product" class="btn btn-warning"><span class = "fa fa-pencil"></span></a>';
 								
+								}else{								
+										str += '<a href="' + window.contextRoot + '/cart/add/' + data + '/product" class="btn btn-success"><span class = "fa fa-shopping-cart"></span></a>';
+										
+								}
 							}
 							return str;
 							

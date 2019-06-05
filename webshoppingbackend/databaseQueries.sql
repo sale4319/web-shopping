@@ -19,7 +19,7 @@ CREATE TABLE user_detail (
 	last_name VARCHAR(50),
 	role VARCHAR(50),
 	enabled BOOLEAN,
-	password VARCHAR(50),
+	password VARCHAR(60),
 	email VARCHAR(100),
 	contact_number VARCHAR(15),
 	CONSTRAINT pk_user_id PRIMARY KEY(id),
@@ -28,15 +28,15 @@ CREATE TABLE user_detail (
 
 INSERT INTO user_detail
 (first_name, last_name, role, enabled, password, email, contact_number)
-VALUES('Sale', 'Saki', 'ADMIN', true, 'admin', 's@gmail.com', '0000000000');
+VALUES('Sale', 'Saki', 'ADMIN', true, '$2b$10$Pjl7U/DmWW.f1OUKMvrTKeRM.w6k6Ybi4dcKtgcpZ5c3GBGYnrnOy', 's@gmail.com', '0000000000');
 
 INSERT INTO user_detail
 (first_name, last_name, role, enabled, password, email, contact_number)
-VALUES('Ica', 'Dandarica', 'SUPPLIER', true, '12345', 'i@gmail.com', '1111111111');
+VALUES('Ica', 'Dandarica', 'SUPPLIER', true, '$2b$10$05pi8bqK2uPIaDgi7G.Y0ugufr60DMDv/q6tIcXi8K26A4WjV2Wca', 'i@gmail.com', '1111111111');
 
 INSERT INTO user_detail
 (first_name, last_name, role, enabled, password, email, contact_number)
-VALUES('Maca', 'Katosav', 'SUPPLIER', true, '12345', 'k@gmail.com', '1111111111');
+VALUES('Maca', 'Katosav', 'SUPPLIER', true, '$2b$10$ar.tKo/We9BRgpCO5YIynegM00ZTYL5HQ65Deh8eQKWY1EIMOoeDy', 'k@gmail.com', '1111111111');
 
 CREATE TABLE product (
 	id IDENTITY,

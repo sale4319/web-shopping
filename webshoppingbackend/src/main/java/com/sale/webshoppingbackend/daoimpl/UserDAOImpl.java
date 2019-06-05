@@ -20,13 +20,29 @@ public class UserDAOImpl implements UserDAO {
 	private SessionFactory sessionFactory;
 
 	@Override
+	public User getByEmail(String email) {
+		String selectQuery = "FROM User WHERE email = :email";
+
+		try {
+
+			return sessionFactory.getCurrentSession()
+					.createQuery(selectQuery, User.class)
+						.setParameter("email", email)
+							.getSingleResult();
+
+		} catch (Exception ex) {
+			return null;
+		}
+
+	}
+
+	@Override
 	public boolean addUser(User user) {
 		try {
 			sessionFactory.getCurrentSession().persist(user);
 			return true;
 
-		} catch (Exception ex) {
-			ex.printStackTrace();
+		} catch (Exception ex) {			
 			return false;
 		}
 	}
@@ -38,7 +54,6 @@ public class UserDAOImpl implements UserDAO {
 			return true;
 
 		} catch (Exception ex) {
-			ex.printStackTrace();
 			return false;
 		}
 	}
@@ -50,27 +65,8 @@ public class UserDAOImpl implements UserDAO {
 			return true;
 
 		} catch (Exception ex) {
-			ex.printStackTrace();
 			return false;
 		}
-	}
-
-	@Override
-	public User getByEmail(String email) {
-		String selectQuery = "FROM User WHERE email = :email";
-
-		try {
-
-			return sessionFactory.getCurrentSession()
-						.createQuery(selectQuery, User.class)
-							.setParameter("email", email)
-								.getSingleResult();
-
-		} catch (Exception ex) {
-			ex.printStackTrace();
-			return null;
-		}
-
 	}
 
 	@Override
@@ -79,13 +75,12 @@ public class UserDAOImpl implements UserDAO {
 		try {
 
 			return sessionFactory.getCurrentSession()
-						.createQuery(selectQuery, Address.class)
-							.setParameter("user_id", userId)
-								.setParameter("billing", true)
-									.getSingleResult();
+					.createQuery(selectQuery, Address.class)
+						.setParameter("user_id", userId)
+							.setParameter("billing", true)
+								.getSingleResult();
 
 		} catch (Exception ex) {
-			ex.printStackTrace();
 			return null;
 		}
 
@@ -94,19 +89,13 @@ public class UserDAOImpl implements UserDAO {
 	@Override
 	public List<Address> listShippingAddresses(int userId) {
 		String selectQuery = "FROM Address WHERE user_id = :user_id AND shipping = :shipping";
-		try {
-
+		
 			return sessionFactory.getCurrentSession()
-						.createQuery(selectQuery, Address.class)
-							.setParameter("user_id", userId)
-								.setParameter("shipping", true)
-									.getResultList();
-
-		} catch (Exception ex) {
-			ex.printStackTrace();
-			return null;
-		}
-
+					.createQuery(selectQuery, Address.class)
+						.setParameter("user_id", userId)
+							.setParameter("shipping", true)
+								.getResultList();
+		
 	}
 
 }
