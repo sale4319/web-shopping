@@ -115,7 +115,8 @@
 				<h3>Available Products</h3>
 			</div>
 		<div class="col-12">			
-			<div style="overflow:auto">
+			<div class="container-fluid">					
+				<div class="table-responsive">
 				<!-- Products table for Admin -->
 				<table id="adminProductsTable" class="table table-striped table-bordered">
 				
@@ -147,6 +148,7 @@
 						
 				</tfoot>						
 				</table>
+			</div>
 			</div>
 		</div>
 		<!-- Modal -->

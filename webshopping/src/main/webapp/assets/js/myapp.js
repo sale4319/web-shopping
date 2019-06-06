@@ -98,22 +98,22 @@ $(function() {
 							var str = '';
 							str += '<a href="' + window.contextRoot + '/show/' + data + '/product" class="btn btn-primary"><span class="fa fa-eye"></span></a> &#160;';
 							
-							if(row.quantity < 1){
+							if(userRole == 'ADMIN'){
+								str += '<a href="' + window.contextRoot + '/manage/' + data + '/product" class="btn btn-warning"><span class = "fa fa-pencil"></span></a>';
+							}
+							else{
+							
+								if(row.quantity < 1){
 								
 								str += '<button type="button" class="btn btn-success" disabled><a href="javascript:void(0)"><span class="fa fa-shopping-cart"></span></a></button>';
 								
 							}
-							else{
-								if(userRole == 'ADMIN'){
-								str += '<a href="' + window.contextRoot + '/manage/' + data + '/product" class="btn btn-warning"><span class = "fa fa-pencil"></span></a>';
-								
-								}else{								
+							else{								
 										str += '<a href="' + window.contextRoot + '/cart/add/' + data + '/product" class="btn btn-success"><span class = "fa fa-shopping-cart"></span></a>';
 										
 								}
 							}
-							return str;
-							
+							return str;							
 						}
 					}
 
@@ -187,23 +187,19 @@ $(function() {
 						}
 					},
 					{
-						data: 'active',
-						bSortTable: false,
-						mRender: function(data,type,row){
-							var str='';
+						data : 'active',
+						bSortable : false,
+						mRender : function(data, type, row) {
+							var str = '';
+							if(data) {											
+								str += '<label class="switch"> <input type="checkbox" value="'+row.id+'" checked="checked">  <div class="slider round"> </div></label>';
+								
+							}else {
+								str += '<label class="switch"> <input type="checkbox" value="'+row.id+'">  <div class="slider round"> </div></label>';
+							}
 							
-								str+='<label class="switch">';
-								if(data){
-									str+='<input type="checkbox" checked="checked" value="'+row.id+'"/>';
-								}
-								else{
-									str+='<input type="checkbox" value="'+row.id+'"/>';
-								}
-								str+='<div class="slider"></div></label>';
-								return str;
-					
+							return str;
 						}
-						
 					},
 					{
 						data: 'id',
