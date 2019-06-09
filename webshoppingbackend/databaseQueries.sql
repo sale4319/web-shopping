@@ -28,7 +28,7 @@ CREATE TABLE user_detail (
 
 INSERT INTO user_detail
 (first_name, last_name, role, enabled, password, email, contact_number)
-VALUES('Sale', 'Saki', 'ADMIN', true, '$2b$10$Pjl7U/DmWW.f1OUKMvrTKeRM.w6k6Ybi4dcKtgcpZ5c3GBGYnrnOy', 's@gmail.com', '0000000000');
+VALUES('Sale', 'Saki', 'ADMIN', true, '$2a$10$d2z0Oy3EgLK1IY3w/QRHHe/2kSH6JEB23IZiht8p51us6WH91m44m', 's@gmail.com', '0000000000');
 
 INSERT INTO user_detail
 (first_name, last_name, role, enabled, password, email, contact_number)
@@ -71,5 +71,29 @@ VALUES ('PRDAEC123DEFX', 'Macbook Pro', 'apple', 'This is expensive stuff.', '60
 
 INSERT INTO product (code, name, brand, description, unit_price, quantity, is_active, category_id, supplier_id, purchases, views)
 VALUES ('PRDAFC123DEFX', 'Asus X550', 'asus', 'This phone is my laptop.', '1000', '5', 'true', 1,3,0,0);
+
+CREATE TABLE cart_line(
+	id IDENTITY,
+	cart_id int,
+	total DECIMAL(10,2),
+	product_id int,
+	product_count int,
+	buying_price DECIMAL(10,2),
+	is_available boolean,
+	CONSTRAINT fk_cartline_cart_id FOREIGN KEY (cart_id) REFERENCES cart(id),
+	CONSTRAINT fk_cartline_product_id FOREIGN KEY (product_id) REFERENCES product(id),
+	CONSTRAINT pk_cartline_id PRIMARY KEY (id)
+	
+);
+
+
+
+
+
+
+
+
+
+
 
 

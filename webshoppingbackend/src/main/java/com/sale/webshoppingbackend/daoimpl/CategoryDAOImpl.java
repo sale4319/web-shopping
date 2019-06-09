@@ -13,7 +13,7 @@ import com.sale.webshoppingbackend.dto.Category;
 
 @Repository("categoryDAO")
 @Transactional
-public class CategoryDAOimpl implements CategoryDAO {
+public class CategoryDAOImpl implements CategoryDAO {
 
 	@Autowired
 	private SessionFactory sessionFactory;
