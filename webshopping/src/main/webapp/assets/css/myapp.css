@@ -234,6 +234,9 @@ input:checked+.slider:before {
 .shopping-cart {
 	margin-top: 20px;
 }
+.unavailable{
+	color:red;
+}
 
 /* cart checkout */
 .panel-title {
