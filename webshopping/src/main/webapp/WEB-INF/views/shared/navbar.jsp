@@ -42,7 +42,7 @@
 				   <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="javascript:void(0)" id="dropdownMenu1" role="button" aria-haspopup="true" aria-expanded="false">${userModel.fullName}</a>
 				    <div class="dropdown-menu">
 				    <security:authorize access="hasAuthority('USER')">
-				      <a class="dropdown-item" href="${contextRoot}/cart"><span class="fa fa-shopping-cart"></span><span class="badge">${userModel.cart.cartLines}</span>- &euro; ${userModel.cart.grandTotal}</a>
+				      <a class="dropdown-item" href="${contextRoot}/cart/show"><i class="fa fa-shopping-cart"></i><span class="badge">${userModel.cart.cartLines}</span>- &euro; ${userModel.cart.grandTotal}</a>
 				    <div class="dropdown-divider"></div>
 				    </security:authorize>
 			    	  <a class="dropdown-item" href="${contextRoot}/perform-logout">Logout</a>
