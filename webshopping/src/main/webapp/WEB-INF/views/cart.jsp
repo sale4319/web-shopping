@@ -27,7 +27,8 @@
 									</c:if>
 								</h4>
 								<h4>
-									<small>Brand - ${cartLine.product.name}</small> 
+									<small>Brand - ${cartLine.product.brand}</small>
+									<br/> 
 									<small>Description - ${cartLine.product.description}</small>
 								</h4>
 							</div>
@@ -43,11 +44,11 @@
 								
 								<div class="col-4 col-sm-4 col-md-4">
 
-									<input type="number" class="form-control text-center" value="${cartLine.productCount}">									
+									<input type="number" id="count_${cartLine.id}" min="1" max="3" class="form-control text-center" value="${cartLine.productCount}">									
 									
 								</div>									
 								<div class="col-2 float-righ">
-									<button type="button" class="btn btn-outline-primary btn-xs"><i class="fa fa-refresh" aria-hidden="true"></i></button>
+									<button type="button" name="refreshCart" value="${cartLine.id}" class="btn btn-outline-primary btn-xs"><i class="fa fa-refresh" aria-hidden="true"></i></button>
 									<button type="button" class="btn btn-outline-danger btn-xs"><i class="fa fa-trash" aria-hidden="true"></i></button>
 									</div>
 									
