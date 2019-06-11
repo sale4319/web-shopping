@@ -56,7 +56,7 @@
 								</div>									
 								<div class="col-2 float-righ">
 									<button type="button" name="refreshCart" value="${cartLine.id}" class="btn btn-outline-primary btn-xs"><i class="fa fa-refresh" aria-hidden="true"></i></button>
-									<button type="button" class="btn btn-outline-danger btn-xs"><i class="fa fa-trash" aria-hidden="true"></i></button>
+									<a href="${contextRoot}/cart/${cartLine.id}/delete" class="btn btn-outline-danger btn-xs"><i class="fa fa-trash"></i></a>
 									</div>
 									
 								
