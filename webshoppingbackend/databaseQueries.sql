@@ -100,7 +100,7 @@ CREATE TABLE cart (
 	CONSTRAINT pk_cart_id PRIMARY KEY (id)
 );
 
-INSERT INTO cart (user_id, grand_total, cart_lines) VALUES (4, 0, 0);
+INSERT INTO cart (user_id, grand_total, cart_lines) VALUES (2, 0, 0);
 
 CREATE TABLE cart_line(
 	id IDENTITY,
