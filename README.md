@@ -1,2 +1,3 @@
 # ShoppingWebPage
-Complete project for web shopping page.
+Preview:
+https://www.youtube.com/watch?v=7immkIeABGM
